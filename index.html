@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Herramientas de consulta y docencia</title>
+<meta name="description" content="Herramientas web de consulta y docencia — Unidad de Lípidos y Riesgo Vascular, H. U. Virgen del Rocío (Sevilla).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d8a69'/%3E%3Cpath d='M32 12c9 12 15 19 15 27a15 15 0 0 1-30 0c0-8 6-15 15-27z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+  :root{
+    --bg:#07140f; --surface:#0d2219; --surface-2:#123124; --line:rgba(233,251,243,.14);
+    --fg:#e9fbf3; --muted:#a3c4b6; --accent:#2fd3a8; --accent-soft:rgba(47,211,168,.14);
+    --shadow:0 14px 34px rgba(0,0,0,.35);
+    --font-body:"Atkinson Hyperlegible","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+    --r:16px; color-scheme:dark;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f2f8f5; --surface:#ffffff; --surface-2:#e6f2ec; --line:rgba(11,42,29,.14);
+      --fg:#0b2a1d; --muted:#4a6a5c; --accent:#0d8a69; --accent-soft:rgba(13,138,105,.10);
+      --shadow:0 10px 26px rgba(11,42,29,.08); color-scheme:light;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--font-body); font-size:16px; line-height:1.45}
+  .wrap{max-width:720px; margin:0 auto; padding:28px 16px 48px}
+  h1{margin:0; font-size:clamp(24px,5vw,32px); line-height:1.15; text-wrap:balance; letter-spacing:-.2px}
+  .sub{margin:6px 0 0; color:var(--muted); font-size:15px}
+  h2{margin:32px 0 12px; font-size:13px; letter-spacing:.8px; text-transform:uppercase; color:var(--muted)}
+  ul{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+  a.card{display:block; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--line);
+         border-radius:var(--r); box-shadow:var(--shadow); padding:16px 18px; min-height:56px}
+  a.card:hover, a.card:focus-visible{border-color:var(--accent); outline:none}
+  a.card:focus-visible{box-shadow:0 0 0 3px var(--accent-soft)}
+  .name{font-size:20px; font-weight:700; line-height:1.2}
+  .desc{margin:6px 0 0; color:var(--muted); font-size:15px}
+  .tag{display:inline-block; margin-top:10px; font-size:12px; font-weight:700; letter-spacing:.4px; text-transform:uppercase;
+       color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent); border-radius:999px; padding:3px 9px}
+  footer{margin-top:36px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px}
+  footer p{margin:0 0 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Herramientas de consulta y docencia</h1>
+    <p class="sub">Dr. Luis M. Beltrán Romero · Unidad de Lípidos y Riesgo Vascular, H. U. Virgen del Rocío (Sevilla)</p>
+  </header>
+
+  <main>
+    <h2>Herramientas</h2>
+    <ul>
+      <li>
+        <a class="card" href="ldl-objetivo/">
+          <span class="name">LDL a objetivo</span>
+          <p class="desc">Qué tratamiento oral llevaría a un paciente a su objetivo de cLDL, según riesgo vascular y situación hepática.</p>
+          <span class="tag">Versión para Hepatología</span>
+        </a>
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>Herramientas docentes y orientativas. No sustituyen el juicio clínico ni la ficha técnica.</p>
+    <p>No introduzcas datos que identifiquen a pacientes.</p>
+  </footer>
+</div>
+</body>
+</html>
