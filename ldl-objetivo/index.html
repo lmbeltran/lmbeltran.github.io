@@ -4,6 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LDL a objetivo</title>
+<meta name="description" content="Qué tratamiento oral llevaría a tu paciente a su objetivo de cLDL, según riesgo vascular y situación hepática. Versión para Hepatología.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="LDL a objetivo · versión para Hepatología">
+<meta property="og:description" content="Qué tratamiento oral llevaría a tu paciente a su objetivo de cLDL, según riesgo vascular y situación hepática.">
+<meta property="og:url" content="https://lmbeltran.github.io/ldl-objetivo/">
+<meta property="og:image" content="https://lmbeltran.github.io/ldl-objetivo/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#07140f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -221,6 +235,7 @@
     <p><b>Fuentes.</b> Mach F, et al. Guía ESC/EAS 2019 y actualización 2025 (objetivos y reducciones) · Fichas técnicas AEMPS: ezetimiba no recomendada en Child-Pugh ≥ 7; estatinas con ciclosporina (simvastatina, rosuvastatina y pitavastatina contraindicadas; atorvastatina ≤ 10 mg); ácido bempedoico (sin ajuste en Child A–B) · BIFIMED, Ministerio de Sanidad (visado del ácido bempedoico) · Pose E, et al. LIVERHOPE, JAMA 2025 · Kim BK, et al. RACING, Lancet 2022.</p>
     <p>Herramienta docente y orientativa. No sustituye el juicio clínico ni la ficha técnica.</p>
     <p>Dr. Luis M. Beltrán Romero · Unidad de Lípidos y Riesgo Vascular, H. U. Virgen del Rocío (Sevilla) · III Jornada de Comorbilidad Metabólica en Hepatología, SAPD, octubre 2026.</p>
+    <p id="version" style="font-size:12px">Versión 1.1 · 18/10/2026 · funciona sin conexión una vez abierta</p>
   </footer>
 </div>
 
@@ -370,7 +385,7 @@
     // ------- render
     let h = "";
     h += `<div class="need">
-      <div class="k"><div class="t">Hay que bajar desde el valor actual</div><div class="v big num">${atGoal ? "0" : Math.ceil(needCur)} %</div></div>
+      <div class="k"><div class="t">Hay que bajar desde el valor actual</div><div class="v big num">${atGoal ? "0" : Math.ceil(needCur - 1e-9)} %</div></div>
       <div class="k"><div class="t">Objetivo (${esc(risk.label.toLowerCase())})</div><div class="v num">&lt; ${f(target,u)}</div></div>
       <div class="k"><div class="t">${cur.key==="none" ? "cLDL basal" : "cLDL basal estimado"}</div><div class="v num">${f(ldl0,u)}</div></div>
     </div>`;
@@ -522,6 +537,9 @@
   buildCurrent(); buildRisk();
   const r = document.getElementById("r-high"); if(r) r.checked = true;
   run();
+
+  if("serviceWorker" in navigator)
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
 })();
 </script>
 

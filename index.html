@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Herramientas de consulta y docencia</title>
 <meta name="description" content="Herramientas web de consulta y docencia — Unidad de Lípidos y Riesgo Vascular, H. U. Virgen del Rocío (Sevilla).">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Herramientas de consulta y docencia">
+<meta property="og:description" content="Herramientas web de consulta y docencia — Unidad de Lípidos y Riesgo Vascular, H. U. Virgen del Rocío (Sevilla).">
+<meta property="og:url" content="https://lmbeltran.github.io/">
+<meta property="og:image" content="https://lmbeltran.github.io/ldl-objetivo/og.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d8a69'/%3E%3Cpath d='M32 12c9 12 15 19 15 27a15 15 0 0 1-30 0c0-8 6-15 15-27z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,5 +75,9 @@
     <p>No introduzcas datos que identifiquen a pacientes.</p>
   </footer>
 </div>
+<script>
+  if("serviceWorker" in navigator)
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+</script>
 </body>
 </html>
